@@ -9,11 +9,15 @@ import android.widget.TextView;
 
 import cn.xiyuanzaixian.xxx.indexable.city.CityIndexActivity;
 import cn.xiyuanzaixian.xxx.indexable.name.PickContactActivity;
+import me.leefeng.citypicker.CityPicker;
+import me.leefeng.citypicker.CityPickerListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CityPickerListener {
 
     private TextView contactName;
     private TextView cityName;
+    private CityPicker cityPicker;
+    private TextView select_city;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
         Button cityIndex = (Button) findViewById(R.id.CityIndex);
         Button nameIndex = (Button) findViewById(R.id.NameIndex);
+        Button selectCity = (Button) findViewById(R.id.selectBtn);
         cityName = (TextView) findViewById(R.id.cityName);
         contactName = (TextView) findViewById(R.id.contactName);
+        select_city = (TextView) findViewById(R.id.select_city);
         cityIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +45,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, SaveCode.REQUESCITYTCODE);
             }
         });
+
+        cityPicker = new CityPicker(MainActivity.this, this);
+        selectCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cityPicker.show();
+            }
+        });
+    }
+
+    /**
+     * 选择后的回调
+     * @param name 返回的城市名
+     */
+    @Override
+    public void getCity(String name) {
+        select_city.setText("选择的城市是: "+name);
     }
 
     /**
@@ -59,5 +82,17 @@ public class MainActivity extends AppCompatActivity {
         } else {
             ToastUtil.showShort(this, "Nothing");
         }
+    }
+
+    /**
+     * 处理三级联动的返回键
+     */
+    @Override
+    public void onBackPressed() {
+        if (cityPicker.isShow()){
+            cityPicker.close();
+            return;
+        }
+        super.onBackPressed();
     }
 }
