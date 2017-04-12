@@ -12,6 +12,10 @@ import cn.xiyuanzaixian.xxx.indexable.name.PickContactActivity;
 import me.leefeng.citypicker.CityPicker;
 import me.leefeng.citypicker.CityPickerListener;
 
+/**
+ * zhouchong
+ * Created by xxx on 2017/4/12.
+ */
 public class MainActivity extends AppCompatActivity implements CityPickerListener {
 
     private TextView contactName;
@@ -57,18 +61,20 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
 
     /**
      * 选择后的回调
+     *
      * @param name 返回的城市名
      */
     @Override
     public void getCity(String name) {
-        select_city.setText("选择的城市是: "+name);
+        select_city.setText("选择的城市是: " + name);
     }
 
     /**
      * 看下面具体的代码
+     *
      * @param requestCode
-     * @param resultCode 结果码
-     * @param data 存储的数据
+     * @param resultCode  结果码
+     * @param data        存储的数据
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -89,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
      */
     @Override
     public void onBackPressed() {
-        if (cityPicker.isShow()){
+        if (cityPicker.isShow()) {
             cityPicker.close();
             return;
         }
