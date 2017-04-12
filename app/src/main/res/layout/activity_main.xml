@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.xiyuanzaixian.xxx.indexable.city.CityIndexActivity">
+
+    <Button
+        android:id="@+id/CityIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="城市索引" />
+
+    <Button
+        android:id="@+id/NameIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="姓名索引" />
+
+    <TextView
+        android:id="@+id/cityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="尚未选中城市" />
+
+    <TextView
+        android:id="@+id/contactName"
+        android:text="尚未选中联系人"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
