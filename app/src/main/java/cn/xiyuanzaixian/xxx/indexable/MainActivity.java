@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.ms.square.android.expandabletextview.ExpandableTextView;
+
 import cn.xiyuanzaixian.xxx.indexable.city.CityIndexActivity;
+import cn.xiyuanzaixian.xxx.indexable.cutdowntext.EasyCountDownTextureView;
 import cn.xiyuanzaixian.xxx.indexable.name.PickContactActivity;
 import me.leefeng.citypicker.CityPicker;
 import me.leefeng.citypicker.CityPickerListener;
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
         cityName = (TextView) findViewById(R.id.cityName);
         contactName = (TextView) findViewById(R.id.contactName);
         select_city = (TextView) findViewById(R.id.select_city);
+
         cityIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +61,19 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
                 cityPicker.show();
             }
         });
+
+        // 文字内容过多折叠
+        ExpandableTextView expandableTextView = (ExpandableTextView) findViewById(R.id.expand_text_view);
+        expandableTextView.setText(getString(R.string.expandText));
+
+        // 倒计时
+        EasyCountDownTextureView easyCountDownTextureView = (EasyCountDownTextureView) findViewById(R.id.cutdownText);
+        int hour = 12;
+        int minute = 0;
+        int second = 0;
+        easyCountDownTextureView.setTimeHour(hour);
+        easyCountDownTextureView.setTimeMinute(minute);
+        easyCountDownTextureView.setTimeSecond(second);
     }
 
     /**
@@ -101,4 +118,6 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
         }
         super.onBackPressed();
     }
+
+
 }
