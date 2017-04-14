@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.blankj.aloglibrary.ALog;
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 
+import java.util.Calendar;
+
 import cn.xiyuanzaixian.xxx.indexable.city.CityIndexActivity;
 import cn.xiyuanzaixian.xxx.indexable.cutdowntext.EasyCountDownTextureView;
 import cn.xiyuanzaixian.xxx.indexable.name.PickContactActivity;
@@ -129,9 +131,17 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
 
         // 倒计时
         EasyCountDownTextureView easyCountDownTextureView = (EasyCountDownTextureView) findViewById(R.id.cutdownText);
-        int hour = 12;
-        int minute = 0;
-        int second = 0;
+
+        Calendar mCalendar = Calendar.getInstance();
+        //mCalendar.setTimeInMillis(time);
+        int mHour = mCalendar.get(Calendar.HOUR_OF_DAY);
+        int mMinute = mCalendar.get(Calendar.MINUTE);
+        int mSecond = mCalendar.get(Calendar.SECOND);
+
+        ALog.d("TIME: " + mHour + ":" + mMinute + ":"    + mSecond);
+        int hour = 24-mHour-1;
+        int minute = 60-mMinute;
+        int second = 60-mSecond;
         easyCountDownTextureView.setTimeHour(hour);
         easyCountDownTextureView.setTimeMinute(minute);
         easyCountDownTextureView.setTimeSecond(second);

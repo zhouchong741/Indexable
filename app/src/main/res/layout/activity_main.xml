@@ -339,6 +339,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:text="下面是 Rx 部分的内容例子"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/lessonStart"
                 android:layout_width="wrap_content"
