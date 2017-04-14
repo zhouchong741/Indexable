@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.blankj.aloglibrary.ALog;
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 
 import cn.xiyuanzaixian.xxx.indexable.city.CityIndexActivity;
 import cn.xiyuanzaixian.xxx.indexable.cutdowntext.EasyCountDownTextureView;
 import cn.xiyuanzaixian.xxx.indexable.name.PickContactActivity;
+import cn.xiyuanzaixian.xxx.indexable.rx.LessonStart;
 import me.leefeng.citypicker.CityPicker;
 import me.leefeng.citypicker.CityPickerListener;
 
@@ -29,14 +31,17 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ALog.Builder builder = new ALog.Builder(this);
         setContentView(R.layout.activity_main);
 
         Button cityIndex = (Button) findViewById(R.id.CityIndex);
         Button nameIndex = (Button) findViewById(R.id.NameIndex);
         Button selectCity = (Button) findViewById(R.id.selectBtn);
+        final Button lessonStart = (Button) findViewById(R.id.lessonStart);
         cityName = (TextView) findViewById(R.id.cityName);
         contactName = (TextView) findViewById(R.id.contactName);
         select_city = (TextView) findViewById(R.id.select_city);
+
 
         cityIndex.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +56,14 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PickContactActivity.class);
                 startActivityForResult(intent, SaveCode.REQUESCITYTCODE);
+            }
+        });
+
+        lessonStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LessonStart rollCall = new LessonStart();
+                rollCall.rollCall();
             }
         });
 
@@ -118,6 +131,4 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
         }
         super.onBackPressed();
     }
-
-
 }
