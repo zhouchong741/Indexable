@@ -14,6 +14,11 @@ import cn.xiyuanzaixian.xxx.indexable.city.CityIndexActivity;
 import cn.xiyuanzaixian.xxx.indexable.cutdowntext.EasyCountDownTextureView;
 import cn.xiyuanzaixian.xxx.indexable.name.PickContactActivity;
 import cn.xiyuanzaixian.xxx.indexable.rx.simple1.LessonStart;
+import cn.xiyuanzaixian.xxx.indexable.rx.simple2.RxActivity;
+import cn.xiyuanzaixian.xxx.indexable.rx.simple3.SendCodeActivity;
+import cn.xiyuanzaixian.xxx.indexable.rx.simple4.TextChangeActivity;
+import cn.xiyuanzaixian.xxx.indexable.rx.simple5.RxLoginActivity;
+import cn.xiyuanzaixian.xxx.indexable.rx.simple6.CartMegerActivity;
 import me.leefeng.citypicker.CityPicker;
 import me.leefeng.citypicker.CityPickerListener;
 
@@ -37,6 +42,11 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
         Button cityIndex = (Button) findViewById(R.id.CityIndex);
         Button nameIndex = (Button) findViewById(R.id.NameIndex);
         Button selectCity = (Button) findViewById(R.id.selectBtn);
+        Button gotoRxActivity = (Button) findViewById(R.id.goToRxActivity);
+        Button goto_sendcode = (Button) findViewById(R.id.goto_sendcode);
+        Button go_to_edittext = (Button) findViewById(R.id.go_to_edittext);
+        Button goto_login = (Button) findViewById(R.id.goto_login);
+        Button go_to_cart = (Button) findViewById(R.id.go_to_cart);
         final Button lessonStart = (Button) findViewById(R.id.lessonStart);
         cityName = (TextView) findViewById(R.id.cityName);
         contactName = (TextView) findViewById(R.id.contactName);
@@ -64,6 +74,44 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
             public void onClick(View v) {
                 LessonStart rollCall = new LessonStart();
                 rollCall.rollCall();
+            }
+        });
+
+        gotoRxActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RxActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        goto_sendcode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SendCodeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        go_to_edittext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TextChangeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        goto_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, RxLoginActivity.class));
+            }
+        });
+
+        go_to_cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CartMegerActivity.class));
             }
         });
 

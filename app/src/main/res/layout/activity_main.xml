@@ -324,23 +324,54 @@
                 app:easyCountColonSize="20sp"
                 app:easyCountHour="6"
                 app:easyCountMinute="6"
-                app:easyCountSecond="26"
                 app:easyCountRectHeight="34dp"
                 app:easyCountRectRadius="5dp"
                 app:easyCountRectSpacing="12dp"
                 app:easyCountRectWidth="36dp"
+                app:easyCountSecond="26"
                 app:easyCountTimeColor="#ff3A94FF"
                 app:easyCountTimeSize="20sp" />
 
         </RelativeLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <Button
                 android:id="@+id/lessonStart"
-                android:text="点名"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点名" />
+
+            <Button
+                android:id="@+id/goToRxActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="goToRxActivity" />
+
+            <Button
+                android:id="@+id/goto_sendcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="去发送验证码" />
+
+            <Button
+                android:id="@+id/go_to_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="去EditText" />
+
+            <Button
+                android:id="@+id/goto_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="去用户登录" />
+
+            <Button
+                android:id="@+id/go_to_cart"
+                android:text="去购物车"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>

@@ -20,6 +20,12 @@
         </activity>
         <activity android:name=".city.CityIndexActivity" />
         <activity android:name=".name.PickContactActivity" />
+        <activity android:name=".rx.simple2.RxActivity" />
+        <activity android:name=".rx.simple2.ButtonClickActivity" />
+        <activity android:name=".rx.simple3.SendCodeActivity" />
+        <activity android:name=".rx.simple4.TextChangeActivity" />
+        <activity android:name=".rx.simple5.RxLoginActivity" />
+        <activity android:name=".rx.simple6.CartMegerActivity"></activity>
     </application>
 
 </manifest>
