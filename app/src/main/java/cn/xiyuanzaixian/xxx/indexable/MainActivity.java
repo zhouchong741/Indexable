@@ -138,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
         int mMinute = mCalendar.get(Calendar.MINUTE);
         int mSecond = mCalendar.get(Calendar.SECOND);
 
+        // 此处的倒计时的截止时间为下一天凌晨
         ALog.d("TIME: " + mHour + ":" + mMinute + ":"    + mSecond);
         int hour = 24-mHour-1;
         int minute = 60-mMinute;
