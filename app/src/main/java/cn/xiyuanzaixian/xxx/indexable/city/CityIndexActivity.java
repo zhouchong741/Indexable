@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import cn.xiyuanzaixian.xxx.indexable.MainActivity;
 import cn.xiyuanzaixian.xxx.indexable.R;
 import cn.xiyuanzaixian.xxx.indexable.SaveCode;
 import cn.xiyuanzaixian.xxx.indexable.ToastUtil;
+import cn.xiyuanzaixian.xxx.indexable.fragment.FirstFragment;
 import me.yokeyword.indexablerv.EntityWrapper;
 import me.yokeyword.indexablerv.IndexableAdapter;
 import me.yokeyword.indexablerv.IndexableLayout;
@@ -77,7 +77,7 @@ public class CityIndexActivity extends AppCompatActivity {
                 }
 
                 // 保存 entity.getName()
-                Intent intent = new Intent(CityIndexActivity.this, MainActivity.class);
+                Intent intent = new Intent(CityIndexActivity.this, FirstFragment.class);
                 intent.putExtra(SaveCode.CITYNAME, entity.getName());
                 CityIndexActivity.this.setResult(SaveCode.REQUESCITYTCODE, intent);
                 CityIndexActivity.this.finish();

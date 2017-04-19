@@ -1,34 +1,27 @@
 package cn.xiyuanzaixian.xxx.indexable;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
+import android.support.v4.content.ContextCompat;
 import android.widget.TextView;
 
 import com.blankj.aloglibrary.ALog;
-import com.ms.square.android.expandabletextview.ExpandableTextView;
 
-import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.List;
 
-import cn.xiyuanzaixian.xxx.indexable.city.CityIndexActivity;
-import cn.xiyuanzaixian.xxx.indexable.cutdowntext.EasyCountDownTextureView;
-import cn.xiyuanzaixian.xxx.indexable.name.PickContactActivity;
-import cn.xiyuanzaixian.xxx.indexable.rx.simple1.LessonStart;
-import cn.xiyuanzaixian.xxx.indexable.rx.simple2.RxActivity;
-import cn.xiyuanzaixian.xxx.indexable.rx.simple3.SendCodeActivity;
-import cn.xiyuanzaixian.xxx.indexable.rx.simple4.TextChangeActivity;
-import cn.xiyuanzaixian.xxx.indexable.rx.simple5.RxLoginActivity;
-import cn.xiyuanzaixian.xxx.indexable.rx.simple6.CartMegerActivity;
+import cn.xiyuanzaixian.xxx.indexable.fragment.FirstFragment;
+import cn.xiyuanzaixian.xxx.indexable.fragment.FourthFragment;
+import cn.xiyuanzaixian.xxx.indexable.fragment.SecondFragment;
+import cn.xiyuanzaixian.xxx.indexable.fragment.ThirdFragment;
 import me.leefeng.citypicker.CityPicker;
-import me.leefeng.citypicker.CityPickerListener;
+import me.riddhimanadib.library.BottomBarHolderActivity;
+import me.riddhimanadib.library.NavigationPage;
 
 /**
  * zhouchong
  * Created by xxx on 2017/4/12.
  */
-public class MainActivity extends AppCompatActivity implements CityPickerListener {
+public class MainActivity extends BottomBarHolderActivity {
 
     private TextView contactName;
     private TextView cityName;
@@ -39,9 +32,21 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ALog.Builder builder = new ALog.Builder(this);
-        setContentView(R.layout.activity_main);
+        NavigationPage page1 = new NavigationPage("Home", ContextCompat.getDrawable(this, R.drawable.ic_home_black_24dp), FirstFragment.newInstance());
+        NavigationPage page2 = new NavigationPage("Support", ContextCompat.getDrawable(this, R.drawable.ic_mail_black_24dp), SecondFragment.newInstance());
+        NavigationPage page3 = new NavigationPage("Billing", ContextCompat.getDrawable(this, R.drawable.ic_assessment_black_24dp), ThirdFragment.newInstance());
+        NavigationPage page4 = new NavigationPage("Profile", ContextCompat.getDrawable(this, R.drawable.ic_person_black_24dp), FourthFragment.newInstance());
 
-        Button cityIndex = (Button) findViewById(R.id.CityIndex);
+        List<NavigationPage> navigationPages = new ArrayList<>();
+        navigationPages.add(page1);
+        navigationPages.add(page2);
+        navigationPages.add(page3);
+        navigationPages.add(page4);
+
+        super.setupBottomBarHolderActivity(navigationPages);
+        //setContentView(R.layout.activity_main);
+
+        /*Button cityIndex = (Button) findViewById(R.id.CityIndex);
         Button nameIndex = (Button) findViewById(R.id.NameIndex);
         Button selectCity = (Button) findViewById(R.id.selectBtn);
         Button gotoRxActivity = (Button) findViewById(R.id.goToRxActivity);
@@ -50,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
         Button goto_login = (Button) findViewById(R.id.goto_login);
         Button go_to_cart = (Button) findViewById(R.id.go_to_cart);
         final Button lessonStart = (Button) findViewById(R.id.lessonStart);
+
+
         cityName = (TextView) findViewById(R.id.cityName);
         contactName = (TextView) findViewById(R.id.contactName);
         select_city = (TextView) findViewById(R.id.select_city);
@@ -148,23 +155,23 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
         easyCountDownTextureView.setTimeSecond(second);
     }
 
-    /**
-     * 选择后的回调
-     *
-     * @param name 返回的城市名
-     */
+    *//**
+         * 选择后的回调
+         *
+         * @param name 返回的城市名
+         *//*
     @Override
     public void getCity(String name) {
         select_city.setText("选择的城市是: " + name);
     }
 
-    /**
-     * 看下面具体的代码
-     *
-     * @param requestCode
-     * @param resultCode  结果码
-     * @param data        存储的数据
-     */
+    *//**
+         * 看下面具体的代码
+         *
+         * @param requestCode
+         * @param resultCode  结果码
+         * @param data        存储的数据
+         *//*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -179,9 +186,9 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
         }
     }
 
-    /**
-     * 处理三级联动的返回键
-     */
+    *//**
+         * 处理三级联动的返回键
+         *//*
     @Override
     public void onBackPressed() {
         if (cityPicker.isShow()) {
@@ -189,5 +196,6 @@ public class MainActivity extends AppCompatActivity implements CityPickerListene
             return;
         }
         super.onBackPressed();
+    }*/
     }
 }

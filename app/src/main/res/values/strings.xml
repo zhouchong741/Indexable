@@ -2,4 +2,11 @@
     <string name="app_name">Indexable</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="expandText">ajsdhfkadshjfkassssssssssssssssssssssssssssssssssssssssssssssssshfaaaaaaaaaaasakjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjskjshfakjashfsfkjash</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="first_fragment">First fragment</string>
+    <string name="second_fragment">Second fragment</string>
+    <string name="third_fragment">Third fragment</string>
+    <string name="fourth_fragment">Fourth fragment</string>
+
 </resources>

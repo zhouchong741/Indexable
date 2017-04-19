@@ -44,5 +44,18 @@ dependencies {
     compile 'com.jakewharton.rxbinding2:rxbinding-design:2.0.0'
     compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
     compile 'com.blankj:alog:0.0.1'
+    compile 'me.riddhimanadib.bottom-nav-bar:bottom-nav-bar:1.0.1'
+    compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.1'
+            }
+        }
+    }
 }

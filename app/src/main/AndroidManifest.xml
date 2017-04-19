@@ -25,7 +25,7 @@
         <activity android:name=".rx.simple3.SendCodeActivity" />
         <activity android:name=".rx.simple4.TextChangeActivity" />
         <activity android:name=".rx.simple5.RxLoginActivity" />
-        <activity android:name=".rx.simple6.CartMegerActivity"></activity>
+        <activity android:name=".rx.simple6.CartMegerActivity" />
     </application>
 
 </manifest>
