@@ -155,23 +155,13 @@ public class MainActivity extends BottomBarHolderActivity {
         easyCountDownTextureView.setTimeSecond(second);
     }
 
-    *//**
-         * 选择后的回调
-         *
-         * @param name 返回的城市名
-         *//*
+
     @Override
     public void getCity(String name) {
         select_city.setText("选择的城市是: " + name);
     }
 
-    *//**
-         * 看下面具体的代码
-         *
-         * @param requestCode
-         * @param resultCode  结果码
-         * @param data        存储的数据
-         *//*
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -186,10 +176,11 @@ public class MainActivity extends BottomBarHolderActivity {
         }
     }
 
-    *//**
-         * 处理三级联动的返回键
-         *//*
-    @Override
+    */
+
+    }
+
+   /* @Override
     public void onBackPressed() {
         if (cityPicker.isShow()) {
             cityPicker.close();
@@ -197,5 +188,5 @@ public class MainActivity extends BottomBarHolderActivity {
         }
         super.onBackPressed();
     }*/
-    }
+
 }

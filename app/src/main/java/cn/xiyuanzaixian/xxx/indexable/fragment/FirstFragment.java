@@ -4,7 +4,7 @@ package cn.xiyuanzaixian.xxx.indexable.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-    import android.support.v4.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,10 +46,6 @@ public class FirstFragment extends Fragment implements CityPickerListener {
         return new FirstFragment();
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -63,19 +59,19 @@ public class FirstFragment extends Fragment implements CityPickerListener {
         super.onActivityCreated(savedInstanceState);
 
         Button cityIndex = (Button) getActivity().findViewById(R.id.CityIndex);
-        Button nameIndex = (Button)  getActivity().findViewById(R.id.NameIndex);
-        Button selectCity = (Button)  getActivity().findViewById(R.id.selectBtn);
-        Button gotoRxActivity = (Button)  getActivity().findViewById(R.id.goToRxActivity);
-        Button goto_sendcode = (Button)  getActivity().findViewById(R.id.goto_sendcode);
-        Button go_to_edittext = (Button)  getActivity().findViewById(R.id.go_to_edittext);
-        Button goto_login = (Button)  getActivity().findViewById(R.id.goto_login);
-        Button go_to_cart = (Button)  getActivity().findViewById(R.id.go_to_cart);
-        Button lessonStart = (Button)  getActivity().findViewById(R.id.lessonStart);
+        Button nameIndex = (Button) getActivity().findViewById(R.id.NameIndex);
+        Button selectCity = (Button) getActivity().findViewById(R.id.selectBtn);
+        Button gotoRxActivity = (Button) getActivity().findViewById(R.id.goToRxActivity);
+        Button goto_sendcode = (Button) getActivity().findViewById(R.id.goto_sendcode);
+        Button go_to_edittext = (Button) getActivity().findViewById(R.id.go_to_edittext);
+        Button goto_login = (Button) getActivity().findViewById(R.id.goto_login);
+        Button go_to_cart = (Button) getActivity().findViewById(R.id.go_to_cart);
+        Button lessonStart = (Button) getActivity().findViewById(R.id.lessonStart);
 
 
-        cityName = (TextView)  getActivity().findViewById(R.id.cityName);
-        contactName = (TextView)  getActivity().findViewById(R.id.contactName);
-        select_city = (TextView)  getActivity().findViewById(R.id.select_city);
+        cityName = (TextView) getActivity().findViewById(R.id.cityName);
+        contactName = (TextView) getActivity().findViewById(R.id.contactName);
+        select_city = (TextView) getActivity().findViewById(R.id.select_city);
 
 
         cityIndex.setOnClickListener(new View.OnClickListener() {
@@ -162,10 +158,10 @@ public class FirstFragment extends Fragment implements CityPickerListener {
         int mSecond = mCalendar.get(Calendar.SECOND);
 
         // 此处的倒计时的截止时间为下一天凌晨
-        ALog.d("TIME: " + mHour + ":" + mMinute + ":"    + mSecond);
-        int hour = 24-mHour-1;
-        int minute = 60-mMinute;
-        int second = 60-mSecond;
+        ALog.d("TIME: " + mHour + ":" + mMinute + ":" + mSecond);
+        int hour = 24 - mHour - 1;
+        int minute = 60 - mMinute;
+        int second = 60 - mSecond;
         easyCountDownTextureView.setTimeHour(hour);
         easyCountDownTextureView.setTimeMinute(minute);
         easyCountDownTextureView.setTimeSecond(second);
@@ -183,6 +179,7 @@ public class FirstFragment extends Fragment implements CityPickerListener {
 
     /**
      * 看下面具体的代码
+     *
      * @param requestCode
      * @param resultCode  结果码
      * @param data        存储的数据
@@ -201,19 +198,4 @@ public class FirstFragment extends Fragment implements CityPickerListener {
             ToastUtil.showShort(getContext(), "Nothing");
         }
     }
-
-    /**
-     * 处理三级联动的返回键
-     */
-    /*@Override
-    public void onBackPressed() {
-        if (cityPicker.isShow()) {
-            cityPicker.close();
-            return;
-        }
-        super.onBackPressed();
-    }*/
-
-
-
 }
