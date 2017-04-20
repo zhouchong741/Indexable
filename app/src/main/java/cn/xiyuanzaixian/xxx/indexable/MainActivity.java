@@ -1,6 +1,7 @@
 package cn.xiyuanzaixian.xxx.indexable;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.MotionEvent;
@@ -49,124 +50,7 @@ public class MainActivity extends BottomBarHolderActivity {
         navigationPages.add(page4);
 
         super.setupBottomBarHolderActivity(navigationPages);
-        //setContentView(R.layout.activity_main);
-
-
-        /*Button cityIndex = (Button) findViewById(R.id.CityIndex);
-        Button nameIndex = (Button) findViewById(R.id.NameIndex);
-        Button selectCity = (Button) findViewById(R.id.selectBtn);
-        Button gotoRxActivity = (Button) findViewById(R.id.goToRxActivity);
-        Button goto_sendcode = (Button) findViewById(R.id.goto_sendcode);
-        Button go_to_edittext = (Button) findViewById(R.id.go_to_edittext);
-        Button goto_login = (Button) findViewById(R.id.goto_login);
-        Button go_to_cart = (Button) findViewById(R.id.go_to_cart);
-        final Button lessonStart = (Button) findViewById(R.id.lessonStart);
-
-
-        cityName = (TextView) findViewById(R.id.cityName);
-        contactName = (TextView) findViewById(R.id.contactName);
-        select_city = (TextView) findViewById(R.id.select_city);
-
-
-        cityIndex.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CityIndexActivity.class);
-                startActivityForResult(intent, SaveCode.REQUESCITYTCODE);
-            }
-        });
-
-        nameIndex.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PickContactActivity.class);
-                startActivityForResult(intent, SaveCode.REQUESCITYTCODE);
-            }
-        });
-
-        lessonStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LessonStart rollCall = new LessonStart();
-                rollCall.rollCall();
-            }
-        });
-
-        gotoRxActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RxActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        goto_sendcode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SendCodeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        go_to_edittext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TextChangeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        goto_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RxLoginActivity.class));
-            }
-        });
-
-        go_to_cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CartMegerActivity.class));
-            }
-        });
-
-        cityPicker = new CityPicker(MainActivity.this, this);
-        selectCity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cityPicker.show();
-            }
-        });
-
-        // 文字内容过多折叠
-        ExpandableTextView expandableTextView = (ExpandableTextView) findViewById(R.id.expand_text_view);
-        expandableTextView.setText(getString(R.string.expandText));
-
-        // 倒计时
-        EasyCountDownTextureView easyCountDownTextureView = (EasyCountDownTextureView) findViewById(R.id.cutdownText);
-
-        Calendar mCalendar = Calendar.getInstance();
-        //mCalendar.setTimeInMillis(time);
-        int mHour = mCalendar.get(Calendar.HOUR_OF_DAY);
-        int mMinute = mCalendar.get(Calendar.MINUTE);
-        int mSecond = mCalendar.get(Calendar.SECOND);
-
-        // 此处的倒计时的截止时间为下一天凌晨
-        ALog.d("TIME: " + mHour + ":" + mMinute + ":"    + mSecond);
-        int hour = 24-mHour-1;
-        int minute = 60-mMinute;
-        int second = 60-mSecond;
-        easyCountDownTextureView.setTimeHour(hour);
-        easyCountDownTextureView.setTimeMinute(minute);
-        easyCountDownTextureView.setTimeSecond(second);
     }
-
-
-    @Override
-    public void getCity(String name) {
-        select_city.setText("选择的城市是: " + name);
-    }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -182,23 +66,7 @@ public class MainActivity extends BottomBarHolderActivity {
         }
     }
 
-    */
-
-    }
-
-   /* @Override
-    public void onBackPressed() {
-        if (cityPicker.isShow()) {
-            cityPicker.close();
-            return;
-        }
-        super.onBackPressed();
-    }*/
-
-
     // 处理点击空白区域软键盘隐藏
-
-
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
 
@@ -209,15 +77,12 @@ public class MainActivity extends BottomBarHolderActivity {
                 if (inputManager != null) {
                     inputManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
                 }
-
             }
             return super.dispatchTouchEvent(ev);
         }
-
         if (getWindow().superDispatchTouchEvent(ev)) {
             return true;
         }
-
         return onTouchEvent(ev);
     }
 
