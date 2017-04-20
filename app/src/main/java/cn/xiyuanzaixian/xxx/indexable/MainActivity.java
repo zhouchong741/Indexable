@@ -19,7 +19,6 @@ import cn.xiyuanzaixian.xxx.indexable.fragment.FirstFragment;
 import cn.xiyuanzaixian.xxx.indexable.fragment.FourthFragment;
 import cn.xiyuanzaixian.xxx.indexable.fragment.SecondFragment;
 import cn.xiyuanzaixian.xxx.indexable.fragment.ThirdFragment;
-import me.leefeng.citypicker.CityPicker;
 import me.riddhimanadib.library.BottomBarHolderActivity;
 import me.riddhimanadib.library.NavigationPage;
 
@@ -31,8 +30,6 @@ public class MainActivity extends BottomBarHolderActivity {
 
     private TextView contactName;
     private TextView cityName;
-    private CityPicker cityPicker;
-    private TextView select_city;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +59,7 @@ public class MainActivity extends BottomBarHolderActivity {
             String contact = data.getStringExtra(SaveCode.CONTACT);
             contactName.setText("选中的名字是: " + contact);
         } else {
-            ToastUtil.showShort(this, "Nothing");
+            ToastUtil.showShort(this, "Select Nothing");
         }
     }
 
