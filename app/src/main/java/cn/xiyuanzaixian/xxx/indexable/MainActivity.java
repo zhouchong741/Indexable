@@ -1,7 +1,12 @@
 package cn.xiyuanzaixian.xxx.indexable;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.blankj.aloglibrary.ALog;
@@ -45,6 +50,7 @@ public class MainActivity extends BottomBarHolderActivity {
 
         super.setupBottomBarHolderActivity(navigationPages);
         //setContentView(R.layout.activity_main);
+
 
         /*Button cityIndex = (Button) findViewById(R.id.CityIndex);
         Button nameIndex = (Button) findViewById(R.id.NameIndex);
@@ -189,4 +195,49 @@ public class MainActivity extends BottomBarHolderActivity {
         super.onBackPressed();
     }*/
 
+
+    // 处理点击空白区域软键盘隐藏
+
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View view = getCurrentFocus();
+            if (isShouldHideInput(view, ev)) {
+                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (inputManager != null) {
+                    inputManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                }
+
+            }
+            return super.dispatchTouchEvent(ev);
+        }
+
+        if (getWindow().superDispatchTouchEvent(ev)) {
+            return true;
+        }
+
+        return onTouchEvent(ev);
+    }
+
+    private boolean isShouldHideInput(View view, MotionEvent ev) {
+
+        if (view != null && (view instanceof EditText)) {
+            int[] leftTop = {0, 0};
+            view.getLocationInWindow(leftTop);
+            int left = leftTop[0];
+            int top = leftTop[1];
+            int bottom = top + view.getHeight();
+            int right = left + view.getWidth();
+            if (ev.getX() > left && ev.getX() < right && ev.getY() > top && ev.getY() < bottom) {
+                return false;
+            } else {
+                view.setFocusable(false);
+                view.setFocusableInTouchMode(true);
+                return true;
+            }
+        }
+        return false;
+    }
 }

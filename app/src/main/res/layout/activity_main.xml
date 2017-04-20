@@ -27,7 +27,15 @@
                 android:id="@+id/cityName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:text="尚未选中城市" />
+
+            <EditText
+                android:id="@+id/et_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="默认" />
         </LinearLayout>
 
         <LinearLayout
@@ -340,11 +348,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:text="下面是 Rx 部分的内容例子"
-                android:gravity="center"
-                android:textSize="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="下面是 Rx 部分的内容例子"
+                android:textSize="20dp" />
+
             <Button
                 android:id="@+id/lessonStart"
                 android:layout_width="wrap_content"
@@ -377,9 +386,9 @@
 
             <Button
                 android:id="@+id/go_to_cart"
-                android:text="去购物车"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="去购物车" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

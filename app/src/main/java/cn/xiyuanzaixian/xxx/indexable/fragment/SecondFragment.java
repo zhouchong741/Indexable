@@ -29,10 +29,10 @@ public class SecondFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_second, container, false);
+
     }
 
     @Override
@@ -45,12 +45,15 @@ public class SecondFragment extends Fragment {
         delete_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editText == null){
+                if (editText == null) {
                     ALog.d("Nothing");
-                }else {
+                } else {
                     editText.setText("");
                 }
             }
         });
     }
+
+
+
 }

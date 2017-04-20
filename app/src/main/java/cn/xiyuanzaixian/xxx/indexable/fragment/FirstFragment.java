@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.blankj.aloglibrary.ALog;
@@ -68,6 +69,7 @@ public class FirstFragment extends Fragment implements CityPickerListener {
         Button go_to_cart = (Button) getActivity().findViewById(R.id.go_to_cart);
         Button lessonStart = (Button) getActivity().findViewById(R.id.lessonStart);
 
+        EditText editText = (EditText) getActivity().findViewById(R.id.et_test);
 
         cityName = (TextView) getActivity().findViewById(R.id.cityName);
         contactName = (TextView) getActivity().findViewById(R.id.contactName);
