@@ -4,10 +4,25 @@
     android:layout_height="match_parent"
     tools:context="cn.xiyuanzaixian.xxx.indexable.fragment.SecondFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/second_fragment" />
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edit_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="默认字符" />
+
+        <ImageButton
+            android:id="@+id/delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_cancel"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
 
 </FrameLayout>
